@@ -85,7 +85,7 @@ const Header = () => {
             {/* Logo */}
             <div className="site-branding">
               <Link href="/">
-                <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend Logo" style={{ height: '80px', width: 'auto' }} />
+                <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend Logo" style={{ height: '120px', width: 'auto' }} />
               </Link>
             </div>
 
