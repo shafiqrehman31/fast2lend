@@ -49,7 +49,7 @@ const HeroSection = () => {
             <div className="col-xl-6 order-1 order-xl-2">
               <div className="hero-one-image wow fadeInRight" data-wow-delay=".8s">
                 <Image 
-                  src="/assets/images/hero/Main-Slider.png" 
+                  src="/assets/images/about/WEbsite-graphics-2.png" 
                   alt="Fast Loan Hero" 
                   width={600} 
                   height={600}

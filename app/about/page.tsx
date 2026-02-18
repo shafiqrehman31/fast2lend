@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-40">
-              <img src="/assets/images/about/about-1.jpg" alt="About Fast2Lend" className="img-fluid rounded-4 shadow" />
+              <img src="/assets/images/about/WEbsite-graphics (1).png" alt="About Fast2Lend" className="img-fluid rounded-4 shadow" />
             </div>
             <div className="col-lg-6 mb-40">
               <span className="sub-title" style={{ color: '#FFB944', fontWeight: '600' }}>Who We Are</span>

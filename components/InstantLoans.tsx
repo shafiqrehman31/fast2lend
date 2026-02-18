@@ -16,7 +16,7 @@ const InstantLoans = () => {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="about-one_image-box mb-50 wow fadeInLeft">
-              <img src="/assets/images/about/about-1.jpg" alt="Instant Loans" style={{ width: '100%', borderRadius: '10px' }} />
+              <img src="/assets/images/hero/Main-Slider.png" alt="Instant Loans" style={{ width: '100%', borderRadius: '10px' }} />
             </div>
           </div>
           <div className="col-lg-6">
