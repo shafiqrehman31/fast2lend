@@ -110,7 +110,7 @@ const Footer = () => {
                 <ul className="list-unstyled">
                   <li className="mb-3 d-flex">
                     <i className="fas fa-map-marker-alt me-3 mt-1" style={{ color: '#FFB944' }}></i>
-                    <span style={{ color: '#B0B0C0', lineHeight: '1.6' }}>17 Hanover Square, Londen,<br /> England, W1s 1BN </span>
+                    <span style={{ color: '#B0B0C0', lineHeight: '1.6' }}>17 Hanover Square, Londen,<br /> England, W1S 1BN </span>
                   </li>
 
                   <li className="mb-3 d-flex">
@@ -167,7 +167,7 @@ const Footer = () => {
                <div className="col-lg-4">
               <div className="footer-text wow fadeInLeft">
                 <p className="small mb-0" style={{ color: '#9A9AB0' }}>
-                 Fast2Leand is a trading style of ALOHA LIMITED. 
+                 Fast2Leand is a trading style of ALOHA Private LIMITED. 
                 </p>
               </div>
             </div>

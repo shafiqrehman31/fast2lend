@@ -54,7 +54,7 @@ export default function ContactPage() {
         <div className="container">
           <div className="row">
             {[
-              { icon: 'fa-map-marker-alt', title: 'Visit Us', info: '17 Hanover Square, Londen, England, W1s 1BN ' },
+              { icon: 'fa-map-marker-alt', title: 'Visit Us', info: '17 Hanover Square, Londen, England, W1S 1BN ' },
               { icon: 'fa-envelope', title: 'Email Us', info: 'support@fast2lend.com', sub: 'We reply within 24 hours' }
             ].map((item, index) => (
               <div className="col-lg-6 col-md-6 mb-30" key={index}>
