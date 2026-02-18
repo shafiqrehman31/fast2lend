@@ -9,6 +9,7 @@ import LoanSummary from "@/components/LoanSummary";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   useEffect(() => {
@@ -62,6 +63,7 @@ export default function Home() {
       <InstantLoans />
       <LoanSummary />
       <WhyChooseUs />
+      <Testimonials />
       <FAQSection />
       <Footer />
       

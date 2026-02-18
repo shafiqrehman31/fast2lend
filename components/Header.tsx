@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
         {/* Header Top Bar */}
-        <div className="header-top-bar" style={{ background: '#0A0A1A', padding: '0px 0' }}>
+        <div className="header-top-bar" style={{ background: '#004a7c', padding: '0px 0' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center text-md-start col-md-6">
@@ -67,48 +67,58 @@ const Header = () => {
                 />
               </Link>
 
-              {/* Desktop Menu */}
+              {/* Desktop Menu - Updated with Syne font */}
               <div className="d-none d-lg-flex align-items-center">
                 <ul className="d-flex list-unstyled mb-0 me-4">
                   <li className="mx-3">
                     <Link href="/" style={{ 
-                      color: isActive('/') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/') ? '#FFB944' : '#004a7c',
                       textDecoration: 'none',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontFamily: '"Syne", sans-serif',
+                      fontSize: '20px'
                     }}>Home</Link>
                   </li>
                   <li className="mx-3">
                     <Link href="/about" style={{ 
-                      color: isActive('/about') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/about') ? '#FFB944' : '#004a7c',
                       textDecoration: 'none',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontFamily: '"Syne", sans-serif',
+                      fontSize: '20px'
                     }}>About</Link>
                   </li>
                   <li className="mx-3">
                     <Link href="/how-it-works" style={{ 
-                      color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
                       textDecoration: 'none',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontFamily: '"Syne", sans-serif',
+                      fontSize: '20px'
                     }}>How it Works</Link>
                   </li>
                   <li className="mx-3">
                     <Link href="/faq" style={{ 
-                      color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/faq') ? '#FFB944' : '#004a7c',
                       textDecoration: 'none',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontFamily: '"Syne", sans-serif',
+                      fontSize: '20px'
                     }}>FAQ</Link>
                   </li>
                   <li className="mx-3">
                     <Link href="/contact" style={{ 
-                      color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/contact') ? '#FFB944' : '#004a7c',
                       textDecoration: 'none',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontFamily: '"Syne", sans-serif',
+                      fontSize: '20px'
                     }}>Contact</Link>
                   </li>
                 </ul>
                 <Link href="/apply" className="btn" style={{
                   background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-                  color: '#0A0A1A',
+                  color: '#004a7c',
                   padding: '10px 25px',
                   borderRadius: '30px',
                   fontWeight: '600',
@@ -187,7 +197,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Links */}
+        {/* Mobile Menu Links - Updated with Syne font */}
         <div style={{ padding: '20px' }}>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
             <li style={{ marginBottom: '15px' }}>
@@ -195,10 +205,11 @@ const Header = () => {
                 display: 'block',
                 padding: '12px 15px',
                 background: isActive('/') ? '#FFF4E0' : 'transparent',
-                color: isActive('/') ? '#FFB944' : '#0A0A1A',
+                color: isActive('/') ? '#FFB944' : '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                fontWeight: isActive('/') ? '600' : '400'
+                fontWeight: isActive('/') ? '600' : '400',
+                fontFamily: '"Syne", sans-serif'
               }}>
                 🏠 Home
               </Link>
@@ -208,10 +219,11 @@ const Header = () => {
                 display: 'block',
                 padding: '12px 15px',
                 background: isActive('/about') ? '#FFF4E0' : 'transparent',
-                color: isActive('/about') ? '#FFB944' : '#0A0A1A',
+                color: isActive('/about') ? '#FFB944' : '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                fontWeight: isActive('/about') ? '600' : '400'
+                fontWeight: isActive('/about') ? '600' : '400',
+                fontFamily: '"Syne", sans-serif'
               }}>
                 ℹ️ About Us
               </Link>
@@ -221,10 +233,11 @@ const Header = () => {
                 display: 'block',
                 padding: '12px 15px',
                 background: isActive('/how-it-works') ? '#FFF4E0' : 'transparent',
-                color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
+                color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                fontWeight: isActive('/how-it-works') ? '600' : '400'
+                fontWeight: isActive('/how-it-works') ? '600' : '400',
+                fontFamily: '"Syne", sans-serif'
               }}>
                 ⚙️ How it Works
               </Link>
@@ -234,10 +247,11 @@ const Header = () => {
                 display: 'block',
                 padding: '12px 15px',
                 background: isActive('/faq') ? '#FFF4E0' : 'transparent',
-                color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
+                color: isActive('/faq') ? '#FFB944' : '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                fontWeight: isActive('/faq') ? '600' : '400'
+                fontWeight: isActive('/faq') ? '600' : '400',
+                fontFamily: '"Syne", sans-serif'
               }}>
                 ❓ FAQ
               </Link>
@@ -247,10 +261,11 @@ const Header = () => {
                 display: 'block',
                 padding: '12px 15px',
                 background: isActive('/contact') ? '#FFF4E0' : 'transparent',
-                color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
+                color: isActive('/contact') ? '#FFB944' : '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '8px',
-                fontWeight: isActive('/contact') ? '600' : '400'
+                fontWeight: isActive('/contact') ? '600' : '400',
+                fontFamily: '"Syne", sans-serif'
               }}>
                 📧 Contact Us
               </Link>
@@ -261,12 +276,13 @@ const Header = () => {
             display: 'block',
             padding: '15px',
             background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-            color: '#0A0A1A',
+            color: '#004a7c',
             textDecoration: 'none',
             borderRadius: '8px',
             fontWeight: '600',
             textAlign: 'center',
-            marginTop: '20px'
+            marginTop: '20px',
+            fontFamily: '"Syne", sans-serif'
           }}>
             ⚡ Apply Now
           </Link>
@@ -278,12 +294,11 @@ const Header = () => {
             background: '#f8f9fa',
             borderRadius: '8px'
           }}>
-            <h6 style={{ marginBottom: '15px', color: '#0A0A1A' }}>Contact Info</h6>
-            <p style={{ marginBottom: '10px', fontSize: '14px' }}>
+            <h6 style={{ marginBottom: '15px', color: '#004a7c', fontFamily: '"Syne", sans-serif' }}>Contact Info</h6>
+            <p style={{ marginBottom: '10px', fontSize: '14px', fontFamily: '"Syne", sans-serif' }}>
               📧 support@fast2lend.com
             </p>
-
-            <p style={{ marginBottom: 0, fontSize: '14px' }}>
+            <p style={{ marginBottom: 0, fontSize: '14px', fontFamily: '"Syne", sans-serif' }}>
               🕒 24/7 Support
             </p>
           </div>

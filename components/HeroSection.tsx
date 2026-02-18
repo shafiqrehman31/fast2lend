@@ -23,10 +23,10 @@ const HeroSection = () => {
                   <i className="far fa-arrow-right"></i>Fast Loan Provider USA
                 </span>
                 <h1 className="wow fadeInUp" data-wow-delay=".5s">
-                  Get Quick Loans from <span className="text-primary">$100 to $5000</span> Instantly
+                  Access loan options from  <span className="text-primary">$100 to $5000</span>  quickly and securely
                 </h1>
                 <p className="wow fadeInUp" data-wow-delay=".6s">
-                  Fast2Lend provides instant loan solutions across the United States with minimal documentation and quick approval.
+                  We help you connect with trusted lenders — we don’t provide loans directly.
                 </p>
                 <div className="hero-button mb-40 wow fadeInDown" data-wow-delay=".7s">
                   <Link href="/contact" className="main-btn primary-btn">
