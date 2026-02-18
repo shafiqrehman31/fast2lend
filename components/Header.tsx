@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
       {/* Header Top Bar */}
-      <div className="header-top-bar" style={{ background: 'linear-gradient(90deg, #004a7c 0%, #1A1A3A 100%)' }}>
+      <div className="header-top-bar" style={{ background: 'linear-gradient(135deg, rgb(0, 152, 255) 0%, rgb(0, 74, 124) 100%)' }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-7">
