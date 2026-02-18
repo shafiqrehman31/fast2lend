@@ -260,7 +260,7 @@ const Header = () => {
           alignItems: 'center',
           background: '#fff'
         }}>
-          <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend" style={{ height: '40px', width: 'auto' }} />
+          <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend" style={{ height: '80px', width: 'auto' }} />
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
             style={{
