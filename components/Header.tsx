@@ -447,17 +447,7 @@ const Header = () => {
                 support@fast2lend.com
               </a>
             </div>
-            <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <i className="fas fa-phone" style={{ color: '#FFB944', width: '20px' }}></i>
-              <a href="tel:+18001234567" style={{ 
-                color: '#4a4a4a', 
-                textDecoration: 'none',
-                fontFamily: '"Syne", sans-serif',
-                fontSize: '14px'
-              }}>
-                +1 (800) 123-4567
-              </a>
-            </div>
+
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <i className="fas fa-clock" style={{ color: '#FFB944', width: '20px' }}></i>
               <span style={{ 
