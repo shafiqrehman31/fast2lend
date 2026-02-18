@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [],
+    unoptimized: false,
+  },
+  turbopack: {
+    root: process.cwd(), // This tells Turbopack to use the current directory as root
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

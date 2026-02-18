@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+cat > README.md << EOL
+# Fast2Lend - Fast Loan Provider USA
 
-## Getting Started
+🚀 A modern loan search platform connecting consumers with trusted lenders.
 
-First, run the development server:
+## 📋 Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Fast2Lend is a financial lead-generation platform that helps users find quick loans from $100 to $5,000. Built with Next.js and TypeScript, it provides a seamless experience for comparing loan offers from multiple lenders.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 💰 Loan amounts from $100 to $5,000
+- 🔍 Real-time lender matching (ping-tree technology)
+- 📊 Transparent pricing examples
+- ✅ Simple 3-step application process
+- 🔒 Bank-level 256-bit SSL encryption
+- 📱 Fully responsive design
+- 📄 Comprehensive legal pages (Terms, Privacy, CCPA)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Framework:** Next.js 16.1.6
+- **Language:** TypeScript
+- **Styling:** CSS Modules, Bootstrap
+- **Animations:** WOW.js
+- **Icons:** FontAwesome
+- **Forms:** Native HTML/CSS
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+\`\`\`
+fast2lend/
+├── app/                    # Next.js app router pages
+│   ├── about/              # About page
+│   ├── before-you-apply/   # Pre-application info
+│   ├── california-privacy/ # CCPA notice
+│   ├── contact/            # Contact page
+│   ├── faq/                # FAQ page
+│   ├── how-it-works/       # How it works page
+│   ├── privacy/            # Privacy policy
+│   ├── sitemap/            # HTML sitemap
+│   ├── terms/              # Terms and conditions
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Homepage
+├── components/             # Reusable components
+│   ├── Header.tsx
+│   ├── HeroSection.tsx
+│   ├── StepProcess.tsx
+│   ├── InstantLoans.tsx
+│   ├── LoanSummary.tsx
+│   ├── WhyChooseUs.tsx
+│   ├── FAQSection.tsx
+│   └── Footer.tsx
+├── public/                 # Static assets
+│   └── assets/             # CSS, JS, images, vendor files
+├── types/                  # TypeScript declarations
+├── next.config.js          # Next.js configuration
+└── package.json            # Dependencies
+\`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+### Prerequisites
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Node.js 18+ 
+- npm or yarn
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Installation
+
+1. Clone the repository
+   \`\`\`bash
+   git clone https://github.com/YOUR_USERNAME/fast2lend.git
+   cd fast2lend
+   \`\`\`
+
+2. Install dependencies
+   \`\`\`bash
+   npm install
+   \`\`\`
+
+3. Run the development server
+   \`\`\`bash
+   npm run dev
+   \`\`\`
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Build for Production
+
+\`\`\`bash
+npm run build
+npm start
+\`\`\`
+
+## 📄 License
+
+This project is proprietary and confidential.
+
+## 📞 Contact
+
+- Website: [www.fast2lend.com](https://www.fast2lend.com)
+- Email: contact@fast2lend.com
+- Developer: Shafiq ur Rehman
+---
+Built with ❤️ for fast and accessible loans 
