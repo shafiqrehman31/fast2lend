@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
       {/* Header Top Bar */}
-      <div className="header-top-bar" style={{ background: 'linear-gradient(90deg, #0A0A1A 0%, #1A1A3A 100%)' }}>
+      <div className="header-top-bar" style={{ background: 'linear-gradient(90deg, #004a7c 0%, #1A1A3A 100%)' }}>
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-lg-7">
@@ -97,7 +97,7 @@ const Header = () => {
                     <Link href="/" style={{ 
                       padding: '30px 0', 
                       display: 'inline-block',
-                      color: isActive('/') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/') ? '#FFB944' : '#004a7c',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
                       position: 'relative',
@@ -112,7 +112,7 @@ const Header = () => {
                     <Link href="/about" style={{ 
                       padding: '30px 0', 
                       display: 'inline-block',
-                      color: isActive('/about') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/about') ? '#FFB944' : '#004a7c',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
                       transition: 'color 0.3s',
@@ -125,7 +125,7 @@ const Header = () => {
                     <Link href="/how-it-works" style={{ 
                       padding: '30px 0', 
                       display: 'inline-block',
-                      color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
                       transition: 'color 0.3s',
@@ -138,7 +138,7 @@ const Header = () => {
                     <Link href="/faq" style={{ 
                       padding: '30px 0', 
                       display: 'inline-block',
-                      color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/faq') ? '#FFB944' : '#004a7c',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
                       transition: 'color 0.3s',
@@ -151,7 +151,7 @@ const Header = () => {
                     <Link href="/contact" style={{ 
                       padding: '30px 0', 
                       display: 'inline-block',
-                      color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
+                      color: isActive('/contact') ? '#FFB944' : '#004a7c',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
                       transition: 'color 0.3s',
@@ -167,11 +167,11 @@ const Header = () => {
             {/* Desktop Right Items */}
             <div className="d-none d-xl-flex align-items-center gap-4">
               <div className="search-btn" data-bs-toggle="modal" data-bs-target="#search-modal" style={{ cursor: 'pointer' }}>
-                <i className="fas fa-search" style={{ color: '#0A0A1A', fontSize: '18px' }}></i>
+                <i className="fas fa-search" style={{ color: '#004a7c', fontSize: '18px' }}></i>
               </div>
               <Link href="/apply" className="main-btn" style={{ 
                 background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-                color: '#0A0A1A',
+                color: '#004a7c',
                 padding: '12px 30px',
                 borderRadius: '30px',
                 fontWeight: '600',
@@ -188,7 +188,7 @@ const Header = () => {
             <div className="d-xl-none d-flex align-items-center gap-3">
               <Link href="/apply" className="main-btn" style={{ 
                 background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-                color: '#0A0A1A',
+                color: '#004a7c',
                 padding: '8px 16px',
                 borderRadius: '30px',
                 fontWeight: '600',
@@ -211,9 +211,9 @@ const Header = () => {
                 }}
                 aria-label="Toggle mobile menu"
               >
-                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
-                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
-                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
+                <span style={{ width: '25px', height: '2px', background: '#004a7c', display: 'block' }}></span>
+                <span style={{ width: '25px', height: '2px', background: '#004a7c', display: 'block' }}></span>
+                <span style={{ width: '25px', height: '2px', background: '#004a7c', display: 'block' }}></span>
               </button>
             </div>
           </div>
@@ -274,7 +274,7 @@ const Header = () => {
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: '50%',
-              color: '#0A0A1A',
+              color: '#004a7c',
               transition: 'all 0.3s'
             }}
             onMouseEnter={(e) => e.currentTarget.style.background = '#f0f0f0'}
@@ -295,7 +295,7 @@ const Header = () => {
                   style={{
                     display: 'block',
                     padding: '15px 20px',
-                    color: isActive('/') ? '#FFB944' : '#0A0A1A',
+                    color: isActive('/') ? '#FFB944' : '#004a7c',
                     textDecoration: 'none',
                     fontFamily: '"Syne", sans-serif',
                     fontWeight: isActive('/') ? '600' : '500',
@@ -316,7 +316,7 @@ const Header = () => {
                   style={{
                     display: 'block',
                     padding: '15px 20px',
-                    color: isActive('/about') ? '#FFB944' : '#0A0A1A',
+                    color: isActive('/about') ? '#FFB944' : '#004a7c',
                     textDecoration: 'none',
                     fontFamily: '"Syne", sans-serif',
                     fontWeight: isActive('/about') ? '600' : '500',
@@ -337,7 +337,7 @@ const Header = () => {
                   style={{
                     display: 'block',
                     padding: '15px 20px',
-                    color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
+                    color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
                     textDecoration: 'none',
                     fontFamily: '"Syne", sans-serif',
                     fontWeight: isActive('/how-it-works') ? '600' : '500',
@@ -358,7 +358,7 @@ const Header = () => {
                   style={{
                     display: 'block',
                     padding: '15px 20px',
-                    color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
+                    color: isActive('/faq') ? '#FFB944' : '#004a7c',
                     textDecoration: 'none',
                     fontFamily: '"Syne", sans-serif',
                     fontWeight: isActive('/faq') ? '600' : '500',
@@ -379,7 +379,7 @@ const Header = () => {
                   style={{
                     display: 'block',
                     padding: '15px 20px',
-                    color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
+                    color: isActive('/contact') ? '#FFB944' : '#004a7c',
                     textDecoration: 'none',
                     fontFamily: '"Syne", sans-serif',
                     fontWeight: isActive('/contact') ? '600' : '500',
@@ -405,7 +405,7 @@ const Header = () => {
                 display: 'block',
                 padding: '16px 20px',
                 background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-                color: '#0A0A1A',
+                color: '#004a7c',
                 textDecoration: 'none',
                 borderRadius: '12px',
                 fontWeight: '600',
@@ -429,7 +429,7 @@ const Header = () => {
           }}>
             <h6 style={{ 
               marginBottom: '15px', 
-              color: '#0A0A1A',
+              color: '#004a7c',
               fontFamily: '"Syne", sans-serif',
               fontWeight: '600',
               fontSize: '16px'
