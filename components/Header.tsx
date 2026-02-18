@@ -14,7 +14,7 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    
+
     // Close mobile menu when route changes
     setIsMobileMenuOpen(false);
 
@@ -23,132 +23,207 @@ const Header = () => {
     };
   }, [pathname]);
 
+  useEffect(() => {
+    // Prevent body scroll when mobile menu is open
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   const isActive = (path: string) => {
     return pathname === path;
   };
 
   return (
-    <>
-      <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
-        {/* Header Top Bar */}
-        <div className="header-top-bar" style={{ background: '#004a7c', padding: '0px 0' }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12 text-center text-md-start col-md-6">
-                <span style={{ color: '#B0B0C0', fontSize: '14px' }}>
-                  <i className="far fa-envelope" style={{ color: '#FFB944', marginRight: '5px' }}></i>
-                  <a href="mailto:support@fast2lend.com" style={{ color: '#fff', textDecoration: 'none' }}>support@fast2lend.com</a>
+    <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
+      {/* Header Top Bar */}
+      <div className="header-top-bar" style={{ background: 'linear-gradient(90deg, #0A0A1A 0%, #1A1A3A 100%)' }}>
+        <div className="container-fluid">
+          <div className="row align-items-center">
+            <div className="col-lg-7">
+              <div className="top-left d-flex flex-wrap gap-4">
+                <span className="d-flex align-items-center">
+                  <i className="far fa-envelope" style={{ color: '#FFB944', marginRight: '8px' }}></i>
+                  <a href="mailto:support@fast2lend.com" className="text-white" style={{ fontSize: '14px', textDecoration: 'none' }}>support@fast2lend.com</a>
+                </span>
+                <span className="d-flex align-items-center">
+                  <i className="far fa-clock" style={{ color: '#FFB944', marginRight: '8px' }}></i>
+                  <span style={{ fontSize: '14px', color: '#B0B0C0' }}>Mon-Fri: 24/7 Support</span>
                 </span>
               </div>
-              <div className="col-12 text-center text-md-end col-md-6 d-none d-md-block">
-                <span style={{ color: '#B0B0C0', fontSize: '14px' }}>
-                  <i className="far fa-clock" style={{ color: '#FFB944', marginRight: '5px' }}></i>
-                  24/7 Support
-                </span>
+            </div>
+            <div className="col-lg-5">
+              <div className="top-right d-flex justify-content-end align-items-center gap-4">
+                <ul className="social-link d-flex gap-3 mb-0">
+                  <li><a href="#" style={{ color: '#B0B0C0', transition: 'all 0.3s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFB944'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#B0B0C0'}><i className="fab fa-facebook-f"></i></a></li>
+                  <li><a href="#" style={{ color: '#B0B0C0', transition: 'all 0.3s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFB944'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#B0B0C0'}><i className="fab fa-twitter"></i></a></li>
+                  <li><a href="#" style={{ color: '#B0B0C0', transition: 'all 0.3s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFB944'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#B0B0C0'}><i className="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="#" style={{ color: '#B0B0C0', transition: 'all 0.3s' }} onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#FFB944'} onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#B0B0C0'}><i className="fab fa-instagram"></i></a></li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Main Header */}
-        <div className="main-header" style={{ 
-          background: '#fff', 
-          padding: '15px 0',
-          boxShadow: isScrolled ? '0 2px 10px rgba(0,0,0,0.1)' : 'none'
-        }}>
-          <div className="container">
-            <div className="d-flex justify-content-between align-items-center">
-              {/* Logo */}
+      {/* Main Header Navigation */}
+      <div className="header-navigation" style={{ 
+        background: isScrolled ? 'rgba(255,255,255,0.98)' : '#fff', 
+        boxShadow: isScrolled ? '0 5px 20px rgba(0,0,0,0.1)' : 'none', 
+        transition: 'all 0.3s ease',
+        position: 'relative',
+        zIndex: 1000
+      }}>
+        <div className="container-fluid">
+          <div className="d-flex align-items-center justify-content-between" style={{ height: '100px' }}>
+            {/* Logo */}
+            <div className="site-branding">
               <Link href="/">
-                <img 
-                  src="/assets/images/logo/fast2Lend.png" 
-                  alt="Fast2Lend" 
-                  style={{ height: '120px', width: 'auto' }}
-                />
+                <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend Logo" style={{ height: '80px', width: 'auto' }} />
               </Link>
+            </div>
 
-              {/* Desktop Menu - Updated with Syne font */}
-              <div className="d-none d-lg-flex align-items-center">
-                <ul className="d-flex list-unstyled mb-0 me-4">
-                  <li className="mx-3">
+            {/* Desktop Navigation - Hidden on mobile */}
+            <div className="d-none d-xl-block">
+              <nav className="main-menu">
+                <ul className="d-flex gap-4" style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                  <li>
                     <Link href="/" style={{ 
-                      color: isActive('/') ? '#FFB944' : '#004a7c',
-                      textDecoration: 'none',
+                      padding: '30px 0', 
+                      display: 'inline-block',
+                      color: isActive('/') ? '#FFB944' : '#0A0A1A',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
-                      fontSize: '20px'
-                    }}>Home</Link>
+                      position: 'relative',
+                      transition: 'color 0.3s',
+                      textDecoration: 'none'
+                    }}>
+                      Home
+                      {isActive('/') && <span style={{ position: 'absolute', bottom: '20px', left: '0', width: '100%', height: '2px', background: '#FFB944' }}></span>}
+                    </Link>
                   </li>
-                  <li className="mx-3">
+                  <li>
                     <Link href="/about" style={{ 
-                      color: isActive('/about') ? '#FFB944' : '#004a7c',
-                      textDecoration: 'none',
+                      padding: '30px 0', 
+                      display: 'inline-block',
+                      color: isActive('/about') ? '#FFB944' : '#0A0A1A',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
-                      fontSize: '20px'
-                    }}>About</Link>
+                      transition: 'color 0.3s',
+                      textDecoration: 'none'
+                    }}>
+                      About Us
+                    </Link>
                   </li>
-                  <li className="mx-3">
+                  <li>
                     <Link href="/how-it-works" style={{ 
-                      color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
-                      textDecoration: 'none',
+                      padding: '30px 0', 
+                      display: 'inline-block',
+                      color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
-                      fontSize: '20px'
-                    }}>How it Works</Link>
+                      transition: 'color 0.3s',
+                      textDecoration: 'none'
+                    }}>
+                      How it Works
+                    </Link>
                   </li>
-                  <li className="mx-3">
+                  <li>
                     <Link href="/faq" style={{ 
-                      color: isActive('/faq') ? '#FFB944' : '#004a7c',
-                      textDecoration: 'none',
+                      padding: '30px 0', 
+                      display: 'inline-block',
+                      color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
-                      fontSize: '20px'
-                    }}>FAQ</Link>
+                      transition: 'color 0.3s',
+                      textDecoration: 'none'
+                    }}>
+                      FAQ
+                    </Link>
                   </li>
-                  <li className="mx-3">
+                  <li>
                     <Link href="/contact" style={{ 
-                      color: isActive('/contact') ? '#FFB944' : '#004a7c',
-                      textDecoration: 'none',
+                      padding: '30px 0', 
+                      display: 'inline-block',
+                      color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
                       fontWeight: '600',
                       fontFamily: '"Syne", sans-serif',
-                      fontSize: '20px'
-                    }}>Contact</Link>
+                      transition: 'color 0.3s',
+                      textDecoration: 'none'
+                    }}>
+                      Contact Us
+                    </Link>
                   </li>
                 </ul>
-                <Link href="/apply" className="btn" style={{
-                  background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-                  color: '#004a7c',
-                  padding: '10px 25px',
-                  borderRadius: '30px',
-                  fontWeight: '600',
-                  textDecoration: 'none'
-                }}>
-                  Apply Now
-                </Link>
-              </div>
+              </nav>
+            </div>
 
-              {/* Mobile Menu Button */}
-              <button 
-                className="d-lg-none btn"
+            {/* Desktop Right Items */}
+            <div className="d-none d-xl-flex align-items-center gap-4">
+              <div className="search-btn" data-bs-toggle="modal" data-bs-target="#search-modal" style={{ cursor: 'pointer' }}>
+                <i className="fas fa-search" style={{ color: '#0A0A1A', fontSize: '18px' }}></i>
+              </div>
+              <Link href="/apply" className="main-btn" style={{ 
+                background: 'linear-gradient(45deg, #FFB944, #FFA500)',
+                color: '#0A0A1A',
+                padding: '12px 30px',
+                borderRadius: '30px',
+                fontWeight: '600',
+                fontFamily: '"Syne", sans-serif',
+                boxShadow: '0 5px 15px rgba(255, 185, 68, 0.3)',
+                transition: 'all 0.3s',
+                textDecoration: 'none'
+              }}>
+                Apply Now <i className="fas fa-arrow-right ms-2"></i>
+              </Link>
+            </div>
+
+            {/* Mobile Right Items */}
+            <div className="d-xl-none d-flex align-items-center gap-3">
+              <Link href="/apply" className="main-btn" style={{ 
+                background: 'linear-gradient(45deg, #FFB944, #FFA500)',
+                color: '#0A0A1A',
+                padding: '8px 16px',
+                borderRadius: '30px',
+                fontWeight: '600',
+                fontFamily: '"Syne", sans-serif',
+                fontSize: '14px',
+                textDecoration: 'none'
+              }}>
+                Apply
+              </Link>
+              <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                style={{
+                style={{ 
+                  cursor: 'pointer',
                   background: 'none',
-                  border: '1px solid #e0e0e0',
-                  padding: '10px 15px',
-                  fontSize: '20px'
+                  border: 'none',
+                  padding: '10px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '6px'
                 }}
+                aria-label="Toggle mobile menu"
               >
-                ☰
+                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
+                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
+                <span style={{ width: '25px', height: '2px', background: '#0A0A1A', display: 'block' }}></span>
               </button>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
+          onClick={() => setIsMobileMenuOpen(false)}
           style={{
             position: 'fixed',
             top: 0,
@@ -156,155 +231,372 @@ const Header = () => {
             width: '100%',
             height: '100%',
             background: 'rgba(0,0,0,0.5)',
-            zIndex: 9998
+            zIndex: 9998,
+            animation: 'fadeIn 0.3s ease'
           }}
-          onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Always rendered but positioned off-screen when closed */}
       <div style={{
         position: 'fixed',
         top: 0,
-        left: isMobileMenuOpen ? '0' : '-100%',
-        width: '300px',
-        height: '100%',
+        right: isMobileMenuOpen ? '0' : '-100%',
+        width: '320px',
+        height: '100vh',
         background: '#fff',
         zIndex: 9999,
-        transition: 'left 0.3s ease',
-        boxShadow: '2px 0 10px rgba(0,0,0,0.1)',
-        overflowY: 'auto'
+        transition: 'right 0.3s ease-in-out',
+        boxShadow: '-5px 0 30px rgba(0,0,0,0.15)',
+        overflowY: 'auto',
+        visibility: isMobileMenuOpen ? 'visible' : 'hidden',
       }}>
         {/* Mobile Menu Header */}
         <div style={{
-          padding: '20px',
+          padding: '25px 20px',
           borderBottom: '1px solid #e0e0e0',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          background: '#fff'
         }}>
-          <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend" style={{ height: '40px' }} />
+          <img src="/assets/images/logo/fast2Lend.png" alt="Fast2Lend" style={{ height: '40px', width: 'auto' }} />
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
             style={{
               background: 'none',
               border: 'none',
-              fontSize: '24px',
-              cursor: 'pointer'
+              fontSize: '28px',
+              cursor: 'pointer',
+              width: '44px',
+              height: '44px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '50%',
+              color: '#0A0A1A',
+              transition: 'all 0.3s'
             }}
+            onMouseEnter={(e) => e.currentTarget.style.background = '#f0f0f0'}
+            onMouseLeave={(e) => e.currentTarget.style.background = 'none'}
           >
-            ✕
+            ×
           </button>
         </div>
 
-        {/* Mobile Menu Links - Updated with Syne font */}
+        {/* Mobile Navigation Links */}
         <div style={{ padding: '20px' }}>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-            <li style={{ marginBottom: '15px' }}>
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} style={{
-                display: 'block',
-                padding: '12px 15px',
-                background: isActive('/') ? '#FFF4E0' : 'transparent',
-                color: isActive('/') ? '#FFB944' : '#004a7c',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: isActive('/') ? '600' : '400',
-                fontFamily: '"Syne", sans-serif'
-              }}>
-                🏠 Home
-              </Link>
-            </li>
-            <li style={{ marginBottom: '15px' }}>
-              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} style={{
-                display: 'block',
-                padding: '12px 15px',
-                background: isActive('/about') ? '#FFF4E0' : 'transparent',
-                color: isActive('/about') ? '#FFB944' : '#004a7c',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: isActive('/about') ? '600' : '400',
-                fontFamily: '"Syne", sans-serif'
-              }}>
-                ℹ️ About Us
-              </Link>
-            </li>
-            <li style={{ marginBottom: '15px' }}>
-              <Link href="/how-it-works" onClick={() => setIsMobileMenuOpen(false)} style={{
-                display: 'block',
-                padding: '12px 15px',
-                background: isActive('/how-it-works') ? '#FFF4E0' : 'transparent',
-                color: isActive('/how-it-works') ? '#FFB944' : '#004a7c',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: isActive('/how-it-works') ? '600' : '400',
-                fontFamily: '"Syne", sans-serif'
-              }}>
-                ⚙️ How it Works
-              </Link>
-            </li>
-            <li style={{ marginBottom: '15px' }}>
-              <Link href="/faq" onClick={() => setIsMobileMenuOpen(false)} style={{
-                display: 'block',
-                padding: '12px 15px',
-                background: isActive('/faq') ? '#FFF4E0' : 'transparent',
-                color: isActive('/faq') ? '#FFB944' : '#004a7c',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: isActive('/faq') ? '600' : '400',
-                fontFamily: '"Syne", sans-serif'
-              }}>
-                ❓ FAQ
-              </Link>
-            </li>
-            <li style={{ marginBottom: '15px' }}>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{
-                display: 'block',
-                padding: '12px 15px',
-                background: isActive('/contact') ? '#FFF4E0' : 'transparent',
-                color: isActive('/contact') ? '#FFB944' : '#004a7c',
-                textDecoration: 'none',
-                borderRadius: '8px',
-                fontWeight: isActive('/contact') ? '600' : '400',
-                fontFamily: '"Syne", sans-serif'
-              }}>
-                📧 Contact Us
-              </Link>
-            </li>
-          </ul>
+          <nav>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+              <li style={{ marginBottom: '5px' }}>
+                <Link 
+                  href="/" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '15px 20px',
+                    color: isActive('/') ? '#FFB944' : '#0A0A1A',
+                    textDecoration: 'none',
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: isActive('/') ? '600' : '500',
+                    fontSize: '16px',
+                    background: isActive('/') ? '#FFF4E0' : 'transparent',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s',
+                    borderLeft: isActive('/') ? '4px solid #FFB944' : '4px solid transparent'
+                  }}
+                >
+                  Home
+                </Link>
+              </li>
+              <li style={{ marginBottom: '5px' }}>
+                <Link 
+                  href="/about" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '15px 20px',
+                    color: isActive('/about') ? '#FFB944' : '#0A0A1A',
+                    textDecoration: 'none',
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: isActive('/about') ? '600' : '500',
+                    fontSize: '16px',
+                    background: isActive('/about') ? '#FFF4E0' : 'transparent',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s',
+                    borderLeft: isActive('/about') ? '4px solid #FFB944' : '4px solid transparent'
+                  }}
+                >
+                  About Us
+                </Link>
+              </li>
+              <li style={{ marginBottom: '5px' }}>
+                <Link 
+                  href="/how-it-works" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '15px 20px',
+                    color: isActive('/how-it-works') ? '#FFB944' : '#0A0A1A',
+                    textDecoration: 'none',
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: isActive('/how-it-works') ? '600' : '500',
+                    fontSize: '16px',
+                    background: isActive('/how-it-works') ? '#FFF4E0' : 'transparent',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s',
+                    borderLeft: isActive('/how-it-works') ? '4px solid #FFB944' : '4px solid transparent'
+                  }}
+                >
+                  How it Works
+                </Link>
+              </li>
+              <li style={{ marginBottom: '5px' }}>
+                <Link 
+                  href="/faq" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '15px 20px',
+                    color: isActive('/faq') ? '#FFB944' : '#0A0A1A',
+                    textDecoration: 'none',
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: isActive('/faq') ? '600' : '500',
+                    fontSize: '16px',
+                    background: isActive('/faq') ? '#FFF4E0' : 'transparent',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s',
+                    borderLeft: isActive('/faq') ? '4px solid #FFB944' : '4px solid transparent'
+                  }}
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li style={{ marginBottom: '5px' }}>
+                <Link 
+                  href="/contact" 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    display: 'block',
+                    padding: '15px 20px',
+                    color: isActive('/contact') ? '#FFB944' : '#0A0A1A',
+                    textDecoration: 'none',
+                    fontFamily: '"Syne", sans-serif',
+                    fontWeight: isActive('/contact') ? '600' : '500',
+                    fontSize: '16px',
+                    background: isActive('/contact') ? '#FFF4E0' : 'transparent',
+                    borderRadius: '8px',
+                    transition: 'all 0.3s',
+                    borderLeft: isActive('/contact') ? '4px solid #FFB944' : '4px solid transparent'
+                  }}
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </nav>
 
-          <Link href="/apply" onClick={() => setIsMobileMenuOpen(false)} style={{
-            display: 'block',
-            padding: '15px',
-            background: 'linear-gradient(45deg, #FFB944, #FFA500)',
-            color: '#004a7c',
-            textDecoration: 'none',
-            borderRadius: '8px',
-            fontWeight: '600',
-            textAlign: 'center',
-            marginTop: '20px',
-            fontFamily: '"Syne", sans-serif'
-          }}>
-            ⚡ Apply Now
-          </Link>
+          {/* Mobile Apply Button */}
+          <div style={{ marginTop: '30px' }}>
+            <Link 
+              href="/apply" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              style={{
+                display: 'block',
+                padding: '16px 20px',
+                background: 'linear-gradient(45deg, #FFB944, #FFA500)',
+                color: '#0A0A1A',
+                textDecoration: 'none',
+                borderRadius: '12px',
+                fontWeight: '600',
+                fontFamily: '"Syne", sans-serif',
+                textAlign: 'center',
+                fontSize: '16px',
+                transition: 'all 0.3s',
+                boxShadow: '0 5px 15px rgba(255, 185, 68, 0.3)'
+              }}
+            >
+              Apply Now
+            </Link>
+          </div>
 
           {/* Contact Info */}
           <div style={{
             marginTop: '30px',
             padding: '20px',
             background: '#f8f9fa',
-            borderRadius: '8px'
+            borderRadius: '12px'
           }}>
-            <h6 style={{ marginBottom: '15px', color: '#004a7c', fontFamily: '"Syne", sans-serif' }}>Contact Info</h6>
-            <p style={{ marginBottom: '10px', fontSize: '14px', fontFamily: '"Syne", sans-serif' }}>
-              📧 support@fast2lend.com
+            <h6 style={{ 
+              marginBottom: '15px', 
+              color: '#0A0A1A',
+              fontFamily: '"Syne", sans-serif',
+              fontWeight: '600',
+              fontSize: '16px'
+            }}>
+              Contact Info
+            </h6>
+            <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fas fa-envelope" style={{ color: '#FFB944', width: '20px' }}></i>
+              <a href="mailto:support@fast2lend.com" style={{ 
+                color: '#4a4a4a', 
+                textDecoration: 'none',
+                fontFamily: '"Syne", sans-serif',
+                fontSize: '14px'
+              }}>
+                support@fast2lend.com
+              </a>
+            </div>
+            <div style={{ marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fas fa-phone" style={{ color: '#FFB944', width: '20px' }}></i>
+              <a href="tel:+18001234567" style={{ 
+                color: '#4a4a4a', 
+                textDecoration: 'none',
+                fontFamily: '"Syne", sans-serif',
+                fontSize: '14px'
+              }}>
+                +1 (800) 123-4567
+              </a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <i className="fas fa-clock" style={{ color: '#FFB944', width: '20px' }}></i>
+              <span style={{ 
+                color: '#4a4a4a',
+                fontFamily: '"Syne", sans-serif',
+                fontSize: '14px'
+              }}>
+                24/7 Customer Support
+              </span>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div style={{
+            marginTop: '30px',
+            padding: '20px 0',
+            textAlign: 'center',
+            borderTop: '1px solid #e0e0e0'
+          }}>
+            <p style={{ 
+              marginBottom: '15px',
+              color: '#6c757d',
+              fontFamily: '"Syne", sans-serif',
+              fontSize: '14px'
+            }}>
+              Follow Us
             </p>
-            <p style={{ marginBottom: 0, fontSize: '14px', fontFamily: '"Syne", sans-serif' }}>
-              🕒 24/7 Support
-            </p>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '25px'
+            }}>
+              <li>
+                <a href="#" style={{ color: '#B0B0C0', fontSize: '20px', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#FFB944'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0C0'}>
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" style={{ color: '#B0B0C0', fontSize: '20px', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#FFB944'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0C0'}>
+                  <i className="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" style={{ color: '#B0B0C0', fontSize: '20px', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#FFB944'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0C0'}>
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#" style={{ color: '#B0B0C0', fontSize: '20px', transition: 'color 0.3s' }}
+                   onMouseEnter={(e) => e.currentTarget.style.color = '#FFB944'}
+                   onMouseLeave={(e) => e.currentTarget.style.color = '#B0B0C0'}>
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </>
+
+      {/* Search Modal */}
+      <div className="modal fade search-modal" id="search-modal" tabIndex={-1}>
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content" style={{ background: 'transparent', border: 'none' }}>
+            <div className="modal-body">
+              <form className="position-relative">
+                <input 
+                  type="search" 
+                  className="form-control" 
+                  placeholder="Search here..." 
+                  name="search"
+                  style={{ 
+                    padding: '15px 30px',
+                    borderRadius: '50px',
+                    border: 'none',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+                  }}
+                />
+                <button type="submit" style={{ 
+                  position: 'absolute', 
+                  right: '15px', 
+                  top: '50%', 
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  color: '#FFB944'
+                }}>
+                  <i className="fas fa-search fa-lg"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .header-area.sticky-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+          from { transform: translateY(-100%); }
+          to { transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        .main-menu ul li a:hover {
+          color: #FFB944 !important;
+        }
+        
+        .main-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(255, 185, 68, 0.4) !important;
+        }
+        
+        @media (max-width: 1200px) {
+          .header-navigation {
+            padding: 10px 0;
+          }
+        }
+      `}</style>
+    </header>
   );
 };
 
