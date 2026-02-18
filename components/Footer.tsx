@@ -110,7 +110,7 @@ const Footer = () => {
                 <ul className="list-unstyled">
                   <li className="mb-3 d-flex">
                     <i className="fas fa-map-marker-alt me-3 mt-1" style={{ color: '#FFB944' }}></i>
-                    <span style={{ color: '#B0B0C0', lineHeight: '1.6' }}>1309 Coffeen Avenue STE 1200<br />Sheridan, Wyoming 82801</span>
+                    <span style={{ color: '#B0B0C0', lineHeight: '1.6' }}>17 Hanover Square, Londen,<br /> England, W1s 1BN </span>
                   </li>
 
                   <li className="mb-3 d-flex">
@@ -157,14 +157,21 @@ const Footer = () => {
         {/* Copyright Section */}
         <div className="footer-copyright py-30">
           <div className="row align-items-center">
-            <div className="col-lg-6">
+            <div className="col-lg-4">
               <div className="footer-text wow fadeInLeft">
                 <p className="small mb-0" style={{ color: '#9A9AB0' }}>
                   © {new Date().getFullYear()} Fast2Lend. All rights reserved.
                 </p>
               </div>
             </div>
-            <div className="col-lg-6">
+               <div className="col-lg-4">
+              <div className="footer-text wow fadeInLeft">
+                <p className="small mb-0" style={{ color: '#9A9AB0' }}>
+                 Fast2Leand is a trading style of ALOHA LIMITED. 
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-4">
               <div className="footer-nav text-lg-end wow fadeInRight">
                 <ul className="list-inline mb-0">
                   <li className="list-inline-item me-3">

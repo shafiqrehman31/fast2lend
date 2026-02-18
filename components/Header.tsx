@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <header className={`header-area ${isScrolled ? 'sticky-header' : ''}`}>
         {/* Header Top Bar */}
-        <div className="header-top-bar" style={{ background: '#0A0A1A', padding: '8px 0' }}>
+        <div className="header-top-bar" style={{ background: '#0A0A1A', padding: '0px 0' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center text-md-start col-md-6">
@@ -282,9 +282,7 @@ const Header = () => {
             <p style={{ marginBottom: '10px', fontSize: '14px' }}>
               📧 support@fast2lend.com
             </p>
-            <p style={{ marginBottom: '10px', fontSize: '14px' }}>
-              📞 +1 (800) 123-4567
-            </p>
+
             <p style={{ marginBottom: 0, fontSize: '14px' }}>
               🕒 24/7 Support
             </p>
