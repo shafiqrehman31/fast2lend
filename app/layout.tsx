@@ -52,6 +52,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/vendor/animate.css" />
         <link rel="stylesheet" href="/assets/css/default.css" />
         <link rel="stylesheet" href="/assets/css/style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
       <body className={`${dmSans.variable} ${syne.variable}`}>
         {children}
